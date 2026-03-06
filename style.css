@@ -1,83 +1,98 @@
-/* General Design */
+/* General Layout Settings */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    background-color: #f0f2f5;
-    color: #2c3e50;
-    overflow-x: hidden;
-}
-
-/* 1. FIXED ANIMATION: Removed the 30px drop and shortened duration */
-@keyframes fadeInQuick {
-    from { 
-        opacity: 0; 
-        transform: translateY(10px); /* Reduced distance for a snappier feel */
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
 }
 
 .container {
-    /* Changed from 0.8s to 0.4s for a more "instant" experience */
-    animation: fadeInQuick 0.4s ease-out; 
-    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
     text-align: center;
 }
 
 /* Menu Table Styling */
 .menu-table {
     width: 100%;
-    background-color: #1a1a1a;
+    background-color: #2c3e50;
+    padding: 10px 0;
     border-collapse: collapse;
 }
 
 .menu-table td {
-    padding: 20px;
     text-align: center;
+    padding: 15px;
 }
 
 .menu-table a {
-    color: #ffffff;
     text-decoration: none;
+    color: #ecf0f1;
     font-weight: bold;
-    font-size: 18px;
-    transition: color 0.2s ease-out; /* Specific transition is faster */
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .menu-table a:hover {
     color: #00d1b2;
 }
 
+/* Skeleton Loading Animation */
+@keyframes skeleton-loading {
+    0% { background-color: #e2e2e2; }
+    100% { background-color: #f5f5f5; }
+}
+
+/* Image Wrapper for Skeleton Effect */
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #e2e2e2;
+    animation: skeleton-loading 1.5s linear infinite alternate;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Maintain aspect ratio to prevent layout shift */
+    display: block;
+    line-height: 0; 
+}
+
+/* Responsive Images with Fade-In */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.6s ease-in-out;
+}
+
 /* Content Table Styling */
 .content-table {
     width: 80%;
-    margin: 20px auto;
-    border-collapse: separate;
-    border-spacing: 25px;
+    margin: 0 auto;
+    border-spacing: 30px;
+    table-layout: fixed;
 }
 
 .content-table td {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    /* 2. FIXED HOVER: Shortened time and forced center origin */
-    transition: transform 0.2s ease-out; 
-    transform-origin: center center;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    vertical-align: top;
 }
 
 .content-table td:hover {
-    transform: scale(1.03);
-}
-
-img, video {
-    width: 100%;
-    border-radius: 8px;
-    display: block; /* Removes bottom whitespace gap */
+    transform: translateY(-10px);
 }
 
 /* Typography */
-h1 { font-size: 3.5rem; color: #34495e; margin-bottom: 10px; }
-h2 { font-size: 1.5rem; color: #7f8c8d; font-weight: 300; }
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+h2 {
+    color: #7f8c8d;
+    font-weight: 300;
+}
