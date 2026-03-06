@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Design Portfolio</title>
+    <link rel="preload" as="image" href="portrait_5.jpeg">
+    <link rel="prefetch" href="portrait_1.jpeg">
+    <link rel="prefetch" href="rising_star_design.jpeg">
 </head>
 <body>
     <table class="menu-table">
@@ -22,13 +25,17 @@
         <table class="content-table" style="width: 50%;">
             <tr>
                 <td>
-                    <img src="portrait_5.jpeg" alt="Portrait Five">
+                    <div class="img-wrapper">
+                        <img src="portrait_5.jpeg" alt="Portrait Five" fetchpriority="high">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.8rem; margin-top: 20px;">Portrait Five</h3>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="sweet_candy_photo.jpeg" alt="Sweet Candy">
+                    <div class="img-wrapper">
+                        <img src="sweet_candy_photo.jpeg" alt="Sweet Candy" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.8rem; margin-top: 20px;">Sweet Candy</h3>
                 </td>
             </tr>
