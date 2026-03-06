@@ -3,6 +3,8 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Design Portfolio</title>
+    <link rel="prefetch" href="portrait_1.jpeg">
+    <link rel="prefetch" href="myself_portrait.jpeg">
 </head>
 <body>
     <table class="menu-table">
@@ -22,40 +24,55 @@
         <table class="content-table">
             <tr>
                 <td>
-                    <img src="rising_star_design.jpeg" alt="Rising Star">
+                    <div class="img-wrapper">
+                        <img src="rising_star_design.jpeg" alt="Rising Star" fetchpriority="high">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Rising Star</h3>
                 </td>
                 <td>
-                    <img src="lone_balloon_design.jpeg" alt="Lone Balloon">
+                    <div class="img-wrapper">
+                        <img src="lone_balloon_design.jpeg" alt="Lone Balloon" fetchpriority="high">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Lone Balloon</h3>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="night_forest_design.jpeg" alt="Night Forest">
+                    <div class="img-wrapper">
+                        <img src="night_forest_design.jpeg" alt="Night Forest" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Night Forest</h3>
                 </td>
                 <td>
-                    <img src="pen_tool_landscape_design.jpeg" alt="Pen Tool Landscape">
+                    <div class="img-wrapper">
+                        <img src="pen_tool_landscape_design.jpeg" alt="Pen Tool Landscape" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Pen Tool Landscape</h3>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="cherish_a_curious_creation_design.jpeg" alt="Curious Creation">
+                    <div class="img-wrapper">
+                        <img src="cherish_a_curious_creation_design.jpeg" alt="Curious Creation" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Curious Creation</h3>
                 </td>
                 <td>
-                    <img src="golden_flourish_design.jpeg" alt="Golden Flourish">
+                    <div class="img-wrapper">
+                        <img src="golden_flourish_design.jpeg" alt="Golden Flourish" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Golden Flourish</h3>
                 </td>
             </tr>
             <tr>
-                <td style="width: 50%;">
-                    <img src="paint_tree_design.jpeg" alt="Paint Tree">
+                <td>
+                    <div class="img-wrapper">
+                        <img src="paint_tree_design.jpeg" alt="Paint Tree" loading="lazy">
+                    </div>
                     <h3 style="color: #8e44ad; font-size: 1.5rem; margin-top: 15px;">Paint Tree</h3>
                 </td>
-                <td style="background: none; box-shadow: none;"></td> </tr>
+                <td></td>
+            </tr>
         </table>
     </div>
 </body>
