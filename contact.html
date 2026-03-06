@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Contact</title>
     <style>
+        /* Fixes the "glitchy" scaling from style.css for the form area */
         .content-table td.no-scale:hover {
             transform: none !important;
         }
@@ -13,6 +14,7 @@
             text-align: left;
         }
 
+        /* Shared styling for both Email and Message fields */
         .stable-field {
             width: 100% !important;
             box-sizing: border-box !important;
@@ -26,12 +28,14 @@
             margin-bottom: 20px;
         }
 
+        /* Specific height for the message area */
         textarea.stable-field {
             height: 150px !important;
             line-height: 1.5 !important;
             resize: vertical;
         }
 
+        /* High-contrast placeholder styling */
         .stable-field::placeholder {
             color: #757575 !important;
             opacity: 1 !important;
