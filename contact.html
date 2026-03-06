@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Contact</title>
+    <link rel="prefetch" href="myself_portrait.jpeg">
     <style>
-        /* Fixes the "glitchy" scaling from style.css for the form area */
         .content-table td.no-scale:hover {
             transform: none !important;
         }
@@ -14,7 +14,6 @@
             text-align: left;
         }
 
-        /* Shared styling for both Email and Message fields */
         .stable-field {
             width: 100% !important;
             box-sizing: border-box !important;
@@ -28,14 +27,12 @@
             margin-bottom: 20px;
         }
 
-        /* Specific height for the message area */
         textarea.stable-field {
             height: 150px !important;
             line-height: 1.5 !important;
             resize: vertical;
         }
 
-        /* High-contrast placeholder styling */
         .stable-field::placeholder {
             color: #757575 !important;
             opacity: 1 !important;
@@ -81,7 +78,9 @@
         <table class="content-table" style="width: 50%; margin: 0 auto;">
             <tr>
                 <td style="width: 40%; vertical-align: top;">
-                    <img src="myself_portrait.jpeg" alt="Portrait" style="width: 100%;">
+                    <div class="img-wrapper">
+                        <img src="myself_portrait.jpeg" alt="Portrait" style="width: 100%;">
+                    </div>
                     <p style="font-weight: bold; font-size: 1.2rem; color: #2c3e50; margin-top: 15px;">Lead Designer</p>
                 </td>
                 <td style="text-align: left; vertical-align: top; padding: 40px;">
