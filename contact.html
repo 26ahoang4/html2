@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+    <style>
+        /* Fixes the "glitchy" scaling from style.css for the form area */
+        .content-table td.no-scale:hover {
+            transform: none !important;
+        }
+
+        .stable-form-container {
+            padding: 40px;
+            text-align: left;
+        }
+
+        /* Shared styling for both Email and Message fields */
+        .stable-field {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            display: block !important;
+            padding: 15px !important;
+            font-size: 18px !important;
+            color: #000 !important;
+            background: #fff !important;
+            border: 2px solid #333 !important;
+            font-family: inherit;
+            margin-bottom: 20px;
+        }
+
+        /* Specific height for the message area */
+        textarea.stable-field {
+            height: 150px !important;
+            line-height: 1.5 !important;
+            resize: vertical;
+        }
+
+        /* High-contrast placeholder styling */
+        .stable-field::placeholder {
+            color: #757575 !important;
+            opacity: 1 !important;
+            font-style: italic;
+        }
+
+        .stable-field:focus {
+            outline: none !important;
+            border-color: #27ae60 !important;
+        }
+
+        .send-btn {
+            background: #27ae60; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+        .send-btn:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+    <table class="menu-table">
+        <tr>
+            <td><a href="index.html">Home</a></td>
+            <td><a href="photo.html">Photography</a></td>
+            <td><a href="design.html">Design</a></td>
+            <td><a href="contact.html" style="color: #00d1b2;">Contact</a></td>
+            <td><a href="video.html">Videos</a></td>
+        </tr>
+    </table>
+
+    <div class="container">
+        <h1 style="color: #27ae60; font-size: 4rem;">Get In Touch</h1>
+        
+        <table class="content-table" style="width: 50%; margin: 0 auto;">
+            <tr>
+                <td style="width: 40%; vertical-align: top;">
+                    <img src="myself_portrait.png" alt="Portrait" style="width: 100%;">
+                    <p style="font-weight: bold; font-size: 1.2rem; color: #2c3e50; margin-top: 15px;">Lead Designer</p>
+                </td>
+                <td style="text-align: left; vertical-align: top; padding: 40px;">
+                    <h2 style="color: #27ae60; font-size: 2rem; margin-top: 0;">Connect With Us</h2>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #34495e;">
+                        We are currently accepting new projects and creative collaborations. 
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="no-scale" style="padding: 40px;">
+                    <div class="stable-form-container">
+                        <form action="#" onsubmit="alert('Thank you! Your inquiry has been sent.'); return false;">
+                            
+                            <label style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">Your Email Address:</label>
+                            <input type="email" class="stable-field" placeholder="email@example.com" required>
+
+                            <label style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">Your Question:</label>
+                            <textarea class="stable-field" placeholder="What would you like to ask the photographer?" required></textarea>
+                            
+                            <button type="submit" class="send-btn">Send Message</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

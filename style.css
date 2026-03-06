@@ -1,0 +1,83 @@
+/* General Design */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+/* 1. FIXED ANIMATION: Removed the 30px drop and shortened duration */
+@keyframes fadeInQuick {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); /* Reduced distance for a snappier feel */
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.container {
+    /* Changed from 0.8s to 0.4s for a more "instant" experience */
+    animation: fadeInQuick 0.4s ease-out; 
+    padding: 40px;
+    text-align: center;
+}
+
+/* Menu Table Styling */
+.menu-table {
+    width: 100%;
+    background-color: #1a1a1a;
+    border-collapse: collapse;
+}
+
+.menu-table td {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-table a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.2s ease-out; /* Specific transition is faster */
+}
+
+.menu-table a:hover {
+    color: #00d1b2;
+}
+
+/* Content Table Styling */
+.content-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 25px;
+}
+
+.content-table td {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    /* 2. FIXED HOVER: Shortened time and forced center origin */
+    transition: transform 0.2s ease-out; 
+    transform-origin: center center;
+}
+
+.content-table td:hover {
+    transform: scale(1.03);
+}
+
+img, video {
+    width: 100%;
+    border-radius: 8px;
+    display: block; /* Removes bottom whitespace gap */
+}
+
+/* Typography */
+h1 { font-size: 3.5rem; color: #34495e; margin-bottom: 10px; }
+h2 { font-size: 1.5rem; color: #7f8c8d; font-weight: 300; }
