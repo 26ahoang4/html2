@@ -1,98 +1,148 @@
-/* General Layout Settings */
+/* General Design */
 body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f0f2f5;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+/* 1. FIXED ANIMATION: Removed the 30px drop and shortened duration */
+@keyframes fadeInQuick {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    animation: fadeInQuick 0.4s ease-out; 
+    padding: 40px;
     text-align: center;
 }
 
 /* Menu Table Styling */
 .menu-table {
     width: 100%;
-    background-color: #2c3e50;
-    padding: 10px 0;
+    background-color: #1a1a1a;
     border-collapse: collapse;
 }
 
 .menu-table td {
+    padding: 20px;
     text-align: center;
-    padding: 15px;
 }
 
 .menu-table a {
+    color: #ffffff;
     text-decoration: none;
-    color: #ecf0f1;
     font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    font-size: 18px;
+    transition: color 0.2s ease-out;
 }
 
 .menu-table a:hover {
     color: #00d1b2;
 }
 
-/* Skeleton Loading Animation */
-@keyframes skeleton-loading {
-    0% { background-color: #e2e2e2; }
-    100% { background-color: #f5f5f5; }
-}
-
-/* Image Wrapper for Skeleton Effect */
-.img-wrapper {
-    position: relative;
-    width: 100%;
-    background-color: #e2e2e2;
-    animation: skeleton-loading 1.5s linear infinite alternate;
-    border-radius: 12px;
-    overflow: hidden;
-    /* Maintain aspect ratio to prevent layout shift */
-    display: block;
-    line-height: 0; 
-}
-
-/* Responsive Images with Fade-In */
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.3s ease, opacity 0.6s ease-in-out;
-}
-
 /* Content Table Styling */
 .content-table {
     width: 80%;
-    margin: 0 auto;
-    border-spacing: 30px;
-    table-layout: fixed;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 25px;
 }
 
 .content-table td {
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-    vertical-align: top;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-out; 
+    transform-origin: center center;
 }
 
 .content-table td:hover {
-    transform: translateY(-10px);
+    transform: scale(1.03);
+}
+
+img, video {
+    width: 100%;
+    border-radius: 8px;
+    display: block; 
 }
 
 /* Typography */
-h1, h2, h3 {
-    margin: 10px 0;
+h1 { font-size: 3.5rem; color: #34495e; margin-bottom: 10px; }
+h2 { font-size: 1.5rem; color: #7f8c8d; font-weight: 300; }
+
+/* 2. SLIDESHOW FIX: Ensure full visibility of portraits */
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e0e0e0;
+    margin-bottom: 50px;
 }
 
-h2 {
-    color: #7f8c8d;
-    font-weight: 300;
+.slide-container {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slide-animation 15s infinite;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    /* FIX: 'contain' ensures the whole photo is visible without cropping */
+    object-fit: contain; 
+    background-color: #f0f2f5;
+}
+
+@keyframes slide-animation {
+    0%, 30% { transform: translateX(0); }
+    33%, 63% { transform: translateX(-33.33%); }
+    66%, 96% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0); }
+}
+
+/* 3. MASONRY GALLERY FIX: Respects varying aspect ratios */
+.fancy-gallery {
+    columns: 3 300px;
+    column-gap: 20px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    height: auto; /* Allows vertical photos to show their full length */
 }
