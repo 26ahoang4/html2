@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Video Trailers</title>
+    <style>
+        /* This ensures the video containers maintain a 16:9 widescreen ratio */
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Prevents the "squished" look */
+            background-color: #e2e2e2;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .img-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <table class="menu-table">
@@ -23,9 +43,9 @@
         <table class="content-table" style="width: 100%; border-spacing: 20px; table-layout: fixed;">
             <tr>
                 <td style="width: 50%; vertical-align: top; padding: 20px;">
-                    <div class="img-wrapper"> <iframe width="100%" 
-                            src="https://www.youtube-nocookie.com/embed/iaN3fZU9UU0" 
-                            title="Trailer 1" frameborder="0" allowfullscreen>
+                    <div class="img-wrapper"> 
+                        <iframe src="https://www.youtube-nocookie.com/embed/iaN3fZU9UU0" 
+                                title="Trailer 1" allowfullscreen>
                         </iframe>
                     </div>
                     <p style="font-size: 1.5rem; font-weight: bold; color: #34495e; margin-top: 15px;">Trailer 1</p>
@@ -33,12 +53,24 @@
                 
                 <td style="width: 50%; vertical-align: top; padding: 20px;">
                     <div class="img-wrapper">
-                        <iframe width="100%" 
-                            src="https://www.youtube-nocookie.com/embed/BS6k4kDR0D4" 
-                            title="Trailer 2" frameborder="0" allowfullscreen>
+                        <iframe src="https://www.youtube-nocookie.com/embed/BS6k4kDR0D4" 
+                                title="Trailer 2" allowfullscreen>
                         </iframe>
                     </div>
                     <p style="font-size: 1.5rem; font-weight: bold; color: #34495e; margin-top: 15px;">Trailer 2</p>
+                </td>
+            </tr>
+        </table>
+
+        <table class="content-table" style="width: 100%; border-spacing: 20px; table-layout: fixed;">
+            <tr>
+                <td style="width: 50%; margin: 0 auto; display: block; vertical-align: top; padding: 20px;">
+                    <div class="img-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/3J_Hhz1k7Ac" 
+                                title="Trailer 3" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #34495e; margin-top: 15px;">Trailer 3</p>
                 </td>
             </tr>
         </table>
