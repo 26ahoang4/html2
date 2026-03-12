@@ -17,26 +17,35 @@
             overflow-x: hidden;
         }
 
-        /* Fixed Navigation */
+        /* --- ONLY MODIFIED MENU BAR START --- */
         .menu-table {
             width: 100%;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
+            background: #1a1a1a; /* Original dark background */
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-collapse: collapse;
         }
 
-        .menu-table td { padding: 20px; text-align: center; }
+        .menu-table td { 
+            padding: 25px; 
+            text-align: center; 
+        }
 
         .menu-table a {
             text-decoration: none;
-            color: #64748b;
-            font-weight: 600;
+            color: #ffffff; /* Original white text */
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
         }
+
+        .menu-table a:hover { 
+            color: var(--accent); 
+        }
+        /* --- ONLY MODIFIED MENU BAR END --- */
 
         .container {
             max-width: 1200px;
@@ -58,7 +67,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
-        /* Each slide is absolute - they stay rendered in the background */
         .slide {
             position: absolute;
             top: 0;
@@ -70,16 +78,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Crossfade transition */
             animation: crossfade 15s infinite;
         }
 
-        /* Offsetting the animation for each slide */
         .slide:nth-child(1) { animation-delay: 0s; }
         .slide:nth-child(2) { animation-delay: 5s; }
         .slide:nth-child(3) { animation-delay: 10s; }
 
-        /* The Blurred Backdrop */
         .blur-backdrop {
             position: absolute;
             width: 110%;
@@ -89,7 +94,6 @@
             z-index: 1;
         }
 
-        /* The Main Sharp Image */
         .main-img {
             position: relative;
             z-index: 2;
@@ -110,14 +114,11 @@
             z-index: 10;
         }
 
-        /* Animation logic for 3 slides: 
-           Stay visible for ~30%, fade for ~3% */
         @keyframes crossfade {
             0%, 33.33% { opacity: 1; z-index: 2; }
             36.66%, 100% { opacity: 0; z-index: 1; }
         }
 
-        /* Simple Gallery Grid below */
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
